@@ -3,20 +3,240 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="ALL" />
   </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml">
+      <package file="$PROJECT_DIR$">
+        <feature name="default" enabled="true" />
+      </package>
+    </cargoProject>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d59852d-2d41-4e21-9d99-868533792a0e" name="Changes" comment="" />
+    <list default="true" id="9d59852d-2d41-4e21-9d99-868533792a0e" name="Changes" comment="add idea config files.">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/atomic-waker-7312adca75df78f3/lib-atomic_waker.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/aws-lc-rs-495cc3c8da3ceaa1/build-script-build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/aws-lc-rs-495cc3c8da3ceaa1/dep-build-script-build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/aws-lc-rs-495cc3c8da3ceaa1/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/aws-lc-sys-8d897dd4ca690610/build-script-build-script-main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/base64-aeeb75713eda9e4d/lib-base64" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/bytes-ad4d8ed3480183d5/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/bytes-ad4d8ed3480183d5/lib-bytes.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/cc-83177dbe496476cc/dep-lib-cc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/cmake-be1b8793824d2d55/lib-cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/cmake-be1b8793824d2d55/lib-cmake.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/encoding_rs-90cb76dd3a28e7cd/lib-encoding_rs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/find-msvc-tools-03557f7d12939ce0/lib-find_msvc_tools" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/fnv-400e1d2bacc1723c/lib-fnv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/form_urlencoded-6a0713c1a5ac641f/lib-form_urlencoded.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/futures-sink-0d91ba50c62cc3c1/lib-futures_sink.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/http-body-401096b1078ca132/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/httparse-3a974d078fc2e56f/dep-build-script-build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/httparse-a2ddefa97b563b92/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/httparse-a2ddefa97b563b92/lib-httparse" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/hyper-db34c7f1315e95e3/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/hyper-db34c7f1315e95e3/lib-hyper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/hyper-db34c7f1315e95e3/lib-hyper.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/hyper-util-ab4501e8fba67523/lib-hyper_util.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/icu_normalizer_data-506a3794c1cf9bda/build-script-build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/icu_properties-0638ab87a77f6976/lib-icu_properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/icu_properties_data-f69b756d0506d59a/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/idna-de9d654922e84b00/lib-idna.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/idna_adapter-739e7a4e55e07491/lib-idna_adapter.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/libc-029dbd8d4c76489b/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/libc-09f01d751fa99abb/dep-lib-libc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/libc-5fd41a2d9e97be39/run-build-script-build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/litemap-01b45ce02e9a0457/lib-litemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/mio-d85a0128fd60a1a7/lib-mio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/once_cell-68ecb02160056e0a/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/once_cell-68ecb02160056e0a/lib-once_cell.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/proc-macro2-6e361d414403e107/dep-lib-proc_macro2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/proc-macro2-e8b85e895052fb77/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/quote-51067c7c7fe09aa3/dep-build-script-build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/quote-55ac1de4da6a99b8/lib-quote" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/quote-e71f2a4c6ffe3d63/run-build-script-build-script-build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/rustls-886940e36cf19e61/lib-rustls.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/serde-815d70bcb32efb8c/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/serde-830168119362d6eb/run-build-script-build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/serde-c1aeda48f7697429/build-script-build-script-build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/serde-c1aeda48f7697429/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/serde_core-1b5417c8220c8ed9/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/serde_core-851e72d957c2af27/run-build-script-build-script-build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/serde_core-a9072d4dd6fd0b77/lib-serde_core" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/serde_json-5a7304fe5eb895cd/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/serde_json-68bb95e34e4bdd39/build-script-build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/serde_json-9fc8c4af50353650/run-build-script-build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/serde_json-9fc8c4af50353650/run-build-script-build-script-build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/stable_deref_trait-46a6e90089c57836/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/syn-2e02a2b33fca64d3/lib-syn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/sync_wrapper-071ebc3300926aab/lib-sync_wrapper.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/tokio-1721c6dbf06bd194/lib-tokio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/tokio-rustls-c029f3e96567b832/lib-tokio_rustls.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/tokio-util-2e62de35f264482d/lib-tokio_util" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/tokio-util-2e62de35f264482d/lib-tokio_util.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/tower-layer-e19fd2325789fc43/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/tracing-e83d6c5ebe7ca585/lib-tracing.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/unicode-ident-7b5331368ce720fe/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/unicode-ident-7b5331368ce720fe/lib-unicode_ident.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/untrusted-b1f8fcfd9f64a3de/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/untrusted-b1f8fcfd9f64a3de/lib-untrusted.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/url-1fb7e4d90f05de33/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/want-095e5c7c9aeabb41/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/want-095e5c7c9aeabb41/lib-want.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/yoke-d4a279c233a7ac5b/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/zerofrom-d8d59d60bf653e63/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/zerovec-a2ddc545e0b5659a/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/zerovec-derive-08b1865ccf6c49ab/dep-lib-zerovec_derive" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/zmij-414b733252835387/dep-build-script-build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/zmij-414b733252835387/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/zmij-527c9cba665cd1bb/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-rs-2fb87dc20e78f1eb/output" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-rs-2fb87dc20e78f1eb/stderr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-rs-495cc3c8da3ceaa1/build_script_build-495cc3c8da3ceaa1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-8d897dd4ca690610/build-script-main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-8d897dd4ca690610/build_script_main-8d897dd4ca690610" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/020bc241f4dae036-bignum_madd_n25519_alt.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/020bc241f4dae036-curve25519_x25519base.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/056c1e7192c7090b-pkcs8_x509.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/0a404614a98ad4aa-ui.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/1eca0b6fab589d4a-chacha-x86_64.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/27a075eab3d35364-pem_info.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/27a075eab3d35364-pem_lib.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/27a075eab3d35364-pem_oth.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/2d40dbbd793ef942-jitterentropy-timer.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/30a9a10d3f98970e-mem.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/30a9a10d3f98970e-refcount_lock.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/4433246e317b5e42-bignum_deamont_p384.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/4433246e317b5e42-bignum_montmul_p384.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/4433246e317b5e42-bignum_montsqr_p384.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/4433246e317b5e42-bignum_nonzero_6.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/45070f5a112d041b-ube.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/4696e3d2cc941c84-pmbtoken.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/46ab76b5467ff2b0-obj_decrepit.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/57454e98e6b3bf86-sha3_keccak4_f1600_alt.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/57454e98e6b3bf86-sha3_keccak_f1600.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/5d4700fda13603f0-poly1305.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/5d4700fda13603f0-poly1305_vec.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/65fbbb68d007b209-hpke.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/6f8e1f92835a38cb-x509_decrepit.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/7510312e0f5aa0be-evp_asn1.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/7510312e0f5aa0be-p_ec_asn1.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/7510312e0f5aa0be-p_ed25519_asn1.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/7510312e0f5aa0be-p_pqdsa_asn1.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/76322f89f5cc2d96-bio.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/76322f89f5cc2d96-bio_addr.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/76322f89f5cc2d96-socket_helper.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/7ac4c9359514b807-obj.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/7bf3e571b6558a6b-ccrandomgeneratebytes.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/7bf3e571b6558a6b-deterministic.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/81d9a39ddc6b1c4e-aesni-xts-avx512.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/81d9a39ddc6b1c4e-md5-x86_64.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/81d9a39ddc6b1c4e-rdrand-x86_64.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/81d9a39ddc6b1c4e-rsaz-4k-avx512.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/81d9a39ddc6b1c4e-x86_64-mont5.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/88572c8521602bd1-bignum_fromlebytes_p521.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/88572c8521602bd1-bignum_inv_p521.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/89981633f66afe17-e_aesctrhmac.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/89981633f66afe17-e_rc2.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/904ef411c1476e9d-cipher.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/a4677c68e4880270-buf.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/a6455f51a2435c3f-chacha.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/b0fd2550ab09b04e-rsassa_pss_asn1.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/bc1b343226bc6a17-a_d2i_fp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/bc1b343226bc6a17-a_object.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/bc1b343226bc6a17-a_strex.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/bc1b343226bc6a17-a_utctm.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/bc1b343226bc6a17-asn1_par.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/bc1b343226bc6a17-tasn_dec.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/c1300545a7d60e2b-params.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/c4fcddba145918af-asn1_compat.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/caa8b30982b4915c-ocsp_http.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/caa8b30982b4915c-ocsp_server.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/dfe446faf29f8012-ec_asn1.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/dfe446faf29f8012-hash_to_curve.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/e616dc00b7af72b9-nttunpack.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/e616dc00b7af72b9-poly_compress_d10.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/e616dc00b7af72b9-poly_decompress_d10.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/e616dc00b7af72b9-poly_decompress_d5.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/e616dc00b7af72b9-polyvec_basemul_acc_montgomery_cached_asm_k2.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/e71c6558e17b1ce7-digest_extra.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-a_verify.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-algorithm.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-by_dir.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-v3_akeya.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-v3_extku.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-v3_ncons.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-v3_purp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-x509.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-x509_def.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-x509_req.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-x509_vpm.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-x509cset.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-x509rset.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-x_crl.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-x_x509.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/ebcd52e9457b6221-x_x509a.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/f8e4fd781484bd36-bcm.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/asn1t.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/base.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/blake2.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/buffer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/cipher.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/dtls1.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/ecdsa.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/err.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/evp.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/lhash.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/md5.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/obj_mac.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/ocsp.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/pkcs8.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/safestack.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/siphash.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/sshkdf.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/trust_token.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/aws-lc-sys-e7d83980e008f665/out/include/openssl/type_check.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/icu_normalizer_data-3722a1bead39f24e/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/icu_normalizer_data-3722a1bead39f24e/root-output" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/icu_properties_data-2f850767f9a45dbb/build_script_build-2f850767f9a45dbb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/icu_properties_data-3a7813886a14c7ed/output" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/icu_properties_data-3a7813886a14c7ed/stderr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/libc-7064b32ee345a353/build_script_build-7064b32ee345a353" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/proc-macro2-19449fcd8ddca04a/root-output" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/proc-macro2-19449fcd8ddca04a/stderr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/proc-macro2-e8b85e895052fb77/build_script_build-e8b85e895052fb77.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/rustls-e70f30cee446061d/build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/serde_core-1b5417c8220c8ed9/build_script_build-1b5417c8220c8ed9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/serde_core-851e72d957c2af27/stderr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/zmij-414b733252835387/build-script-build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/zmij-414b733252835387/build_script_build-414b733252835387.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/build/zmij-f61db2e96111f9b0/stderr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/deps/libcmake-be1b8793824d2d55.rlib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/deps/libcmake-be1b8793824d2d55.rmeta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/deps/libdunce-72ccdb22da1d405d.rlib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/deps/libfind_msvc_tools-03557f7d12939ce0.rlib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/deps/libfs_extra-645539fcf2a9f6a4.rlib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/deps/libquote-55ac1de4da6a99b8.rmeta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/deps/libserde_derive-41a3a47bfa77388a.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/deps/libsynstructure-3eca9b6fd08313a9.rlib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/debug/deps/libzerofrom_derive-1105ef85489e382b.so" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="iY1qkDtu" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "git-widget-placeholder": "lib",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "settings.editor.selected.configurable": "language.rust"
   }
 }]]></component>
@@ -24,6 +244,19 @@
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="add idea config files.">
+      <option name="closed" value="true" />
+      <created>1781135321589</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1781135321589</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add idea config files." />
+    <option name="LAST_COMMIT_MESSAGE" value="add idea config files." />
   </component>
 </project>
