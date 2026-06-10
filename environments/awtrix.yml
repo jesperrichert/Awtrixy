@@ -1,0 +1,8 @@
+name: awtrix
+variables:
+  - name: AWTRIX_WEB_URL
+    value: "{{process.env.AWTRIX_WEB_URL}}"
+  - name: AWTRIX_USER
+    value: "{{process.env.AWTRIX_USER}}"
+  - name: AWTRIX_PASSWORD
+    value: "{{process.env.AWTRIX_PASSWORD}}"
