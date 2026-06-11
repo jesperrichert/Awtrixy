@@ -11,20 +11,9 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d59852d-2d41-4e21-9d99-868533792a0e" name="Changes" comment="add test notification.">
-      <change beforePath="$PROJECT_DIR$/.idea/Awtrixy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Awtrixy.iml" afterDir="false" />
+    <list default="true" id="9d59852d-2d41-4e21-9d99-868533792a0e" name="Changes" comment="add better error handling. updated requests. bump version.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requests/custom_apps.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/requests/custom_apps.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requests/general.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/requests/general.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requests/notifications.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/requests/notifications.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requests/power_control.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/requests/power_control.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requests/special.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/requests/special.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requests/status_retrieval.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/requests/status_retrieval.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,9 +147,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1781177945247</updated>
-      <workItem from="1781177946857" duration="4733000" />
+      <workItem from="1781177946857" duration="4804000" />
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add better error handling. updated requests. bump version.">
+      <option name="closed" value="true" />
+      <created>1781182711309</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1781182711309</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +190,7 @@
     <MESSAGE value="add idea config files." />
     <MESSAGE value="add .gitignore" />
     <MESSAGE value="update workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="update workspace.xml" />
+    <MESSAGE value="add better error handling. updated requests. bump version." />
+    <option name="LAST_COMMIT_MESSAGE" value="add better error handling. updated requests. bump version." />
   </component>
 </project>
