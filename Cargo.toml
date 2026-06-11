@@ -6,5 +6,5 @@ edition = "2024"
 [dependencies]
 cron = "0.16.0"
 reqwest = "0.13.4"
-tokio = "1.52.3"
+tokio = { version = "1.52.3", features = ["rt", "rt-multi-thread", "macros"] }
 warptrixy = "0.1.0"

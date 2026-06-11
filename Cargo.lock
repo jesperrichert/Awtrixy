@@ -1314,7 +1314,19 @@ dependencies = [
  "mio",
  "pin-project-lite",
  "socket2",
+ "tokio-macros",
  "windows-sys 0.61.2",
+]
+
+[[package]]
+name = "tokio-macros"
+version = "2.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "385a6cb71ab9ab790c5fe8d67f1645e6c450a7ce006a33de03daa956cf70a496"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
@@ -1461,9 +1473,9 @@ dependencies = [
 
 [[package]]
 name = "warptrixy"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c0d418aedeabc1627cee75654d1645b9e12fa07d41cc5e9059cf625337cfe74e"
+checksum = "a5c4d499c2e9ca5eb08a2ea40aa69c7c6011ca4aead2caf596a707d9fd3c3756"
 dependencies = [
  "reqwest",
  "serde",
