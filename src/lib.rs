@@ -6,3 +6,4 @@ mod requests;
 
 pub use config::Config;
 pub use models::*;
+pub use client::Warptrixy as WarptrixClient;
