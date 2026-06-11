@@ -1,0 +1,17 @@
+Index: src/main.rs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>use std::time::{Duration, Instant};\n\nfn main() {\n    let host = std::env::var(\"AWTRIX_WEB_URL\").unwrap();\n    let user = std::env::var(\"AWTRIX_USER\").unwrap();\n    let password = std::env::var(\"AWTRIX_PASSWORD\").unwrap();\n    println!(\"Started Awtrixy for connection {}\", host);\n\n    let client = \"\";\n\n    let now = Instant::now();\n    let run_every = Duration::from_secs(10);\n    let mut next_run = now + run_every;\n    loop {\n        println!(\"Run Every? {}\", (now - next_run).as_secs());\n        if (now - next_run).as_secs() > 1 {\n            next_run = Instant::now() + run_every;\n            println!(\"Running Scheduler for Display Update\")\n        }\n    }\n}\n
+===================================================================
+diff --git a/src/main.rs b/src/main.rs
+--- a/src/main.rs	(revision d1bffe0e70247adf909577827119ed57718bffae)
++++ b/src/main.rs	(date 1781137542357)
+@@ -6,7 +6,7 @@
+     let password = std::env::var("AWTRIX_PASSWORD").unwrap();
+     println!("Started Awtrixy for connection {}", host);
+ 
+-    let client = "";
++    let client = warptrixy::
+ 
+     let now = Instant::now();
+     let run_every = Duration::from_secs(10);
