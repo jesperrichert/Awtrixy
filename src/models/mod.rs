@@ -3,6 +3,7 @@ mod moodlight_dto;
 mod colored_indicator_dto;
 mod draw;
 mod settings_dto;
+mod awtrix3_responses;
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(untagged)]
@@ -64,3 +65,6 @@ pub use settings_dto::SettingsDto as SettingsDto;
 pub use settings_dto::TransitionEffect as TransitionEffect;
 pub use settings_dto::TimeMode as TimeMode;
 pub use settings_dto::OverlayEffect as OverlayEffect;
+pub use awtrix3_responses::StringVec as Awtrix3StringVecResponse;
+pub use awtrix3_responses::StatsResponse as Awtrix3StatsResponse;
+pub use awtrix3_responses::LoopResponse as Awtrix3LoopResponse;

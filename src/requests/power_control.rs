@@ -5,7 +5,7 @@ use serde_json::json;
 impl Warptrixy {
     pub async fn set_power(&self, online: bool) -> Result<StatusCode, Error> {
         self.client
-            .post(format!("{}/api/loop", &self.config.url))
+            .post(format!("{}/api/power", &self.config.url))
             .json(&json!({
                 "power": online,
             }))
@@ -17,7 +17,7 @@ impl Warptrixy {
 
     pub async fn set_sleep(&self, time: i32) -> Result<StatusCode, Error> {
         self.client
-            .post(format!("{}/api/loop", &self.config.url))
+            .post(format!("{}/api/sleep", &self.config.url))
             .json(&json!({
                 "sleep": time
             }))

@@ -1,40 +1,45 @@
 use crate::client::Warptrixy;
+use crate::{Awtrix3LoopResponse, Awtrix3StatsResponse, Awtrix3StringVecResponse};
 use reqwest::{Error, StatusCode};
 
 impl Warptrixy {
-    pub async fn list_apps(&self) -> Result<StatusCode, Error> {
+    pub async fn list_apps(&self) -> Result<Awtrix3LoopResponse, Error> {
         self.client
             .get(format!("{}/api/loop", &self.config.url))
             .basic_auth(&self.config.username, Some(&self.config.password))
             .send()
+            .await?
+            .json::<Awtrix3LoopResponse>()
             .await
-            .and_then(|resp| Ok(resp.status()))
     }
 
-    pub async fn list_transitions(&self) -> Result<StatusCode, Error> {
+    pub async fn list_transitions(&self) -> Result<Awtrix3StringVecResponse, Error> {
         self.client
             .get(format!("{}/api/transitions", &self.config.url))
             .basic_auth(&self.config.username, Some(&self.config.password))
             .send()
+            .await?
+            .json::<Awtrix3StringVecResponse>()
             .await
-            .and_then(|resp| Ok(resp.status()))
     }
 
-    pub async fn list_effects(&self) -> Result<StatusCode, Error> {
+    pub async fn list_effects(&self) -> Result<Awtrix3StringVecResponse, Error> {
         self.client
             .get(format!("{}/api/effects", &self.config.url))
             .basic_auth(&self.config.username, Some(&self.config.password))
             .send()
+            .await?
+            .json::<Awtrix3StringVecResponse>()
             .await
-            .and_then(|resp| Ok(resp.status()))
     }
 
-    pub async fn get_stats(&self) -> Result<StatusCode, Error> {
+    pub async fn get_stats(&self) -> Result<Awtrix3StatsResponse, Error> {
         self.client
             .get(format!("{}/api/stats", &self.config.url))
             .basic_auth(&self.config.username, Some(&self.config.password))
             .send()
+            .await?
+            .json::<Awtrix3StatsResponse>()
             .await
-            .and_then(|resp| Ok(resp.status()))
     }
 }
