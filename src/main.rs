@@ -14,7 +14,7 @@ async fn main() {
         password: password.to_string(),
     });
 
-    client
+    let code = client
         .send_notification(warptrixy::CustomAppDto {
             text: Option::from(TextValue::String("TEST".to_string())),
             text_case: None,
@@ -58,7 +58,10 @@ async fn main() {
         })
         .await
         .unwrap();
+    println!("{}", code);
+    println!("{:?}", client.set_power(true).await.unwrap());
 
+  /*
     let now = Instant::now();
     let run_every = Duration::from_secs(10);
     let mut next_run = now + run_every;
@@ -69,4 +72,5 @@ async fn main() {
             println!("Running Scheduler for Display Update")
         }
     }
+   */
 }

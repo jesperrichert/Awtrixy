@@ -1473,9 +1473,9 @@ dependencies = [
 
 [[package]]
 name = "warptrixy"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a5c4d499c2e9ca5eb08a2ea40aa69c7c6011ca4aead2caf596a707d9fd3c3756"
+checksum = "a52b15e6e06c3a96c5280d59dec049545077f5e88b54443c68e6b20574cd1717"
 dependencies = [
  "reqwest",
  "serde",
