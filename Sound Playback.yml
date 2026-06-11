@@ -1,0 +1,24 @@
+info:
+  name: Sound Playback
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{AWTRIX_WEB_URL}}/api/sound"
+  body:
+    type: json
+    data: |-
+      {
+        "sound":"alarm"
+      }  
+  auth:
+    type: basic
+    username: "{{AWTRIX_USER}}"
+    password: "{{AWTRIX_PASSWORD}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

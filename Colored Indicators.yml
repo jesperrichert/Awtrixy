@@ -1,0 +1,24 @@
+info:
+  name: Colored Indicators
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{AWTRIX_WEB_URL}}/api/indicator1"
+  body:
+    type: json
+    data: |-
+      {
+        "color": [255,0,0] // or string
+      }
+  auth:
+    type: basic
+    username: "{{AWTRIX_USER}}"
+    password: "{{AWTRIX_PASSWORD}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

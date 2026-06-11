@@ -1,16 +1,16 @@
 info:
-  name: Send Notification
+  name: Power
   type: http
-  seq: 4
+  seq: 1
 
 http:
   method: POST
-  url: "{{AWTRIX_WEB_URL}}/api/notify"
+  url: "{{AWTRIX_WEB_URL}}/api/power"
   body:
     type: json
     data: |-
       {
-        "text": "EIER"
+        "power": true
       }
   auth:
     type: basic

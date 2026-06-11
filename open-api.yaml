@@ -5,8 +5,65 @@ info:
 paths:
   /api/loop:
     get:
-      summary: List Apps
-      operationId: home_jespersen_dokumente_bruno_awtrix_api_list_apps_yml
+      summary: Loop
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_status_retrieval_loop_yml
+      description: ''
+      tags:
+        - Status Retrieval
+      responses:
+        '200':
+          description: ''
+      security:
+        - loop: []
+      servers:
+        - url: http://192.168.178.10
+  /api/stats:
+    get:
+      summary: Stats
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_status_retrieval_stats_yml
+      description: ''
+      tags:
+        - Status Retrieval
+      responses:
+        '200':
+          description: ''
+      security:
+        - stats: []
+      servers:
+        - url: http://192.168.178.10
+  /api/transitions:
+    get:
+      summary: Transitions
+      operationId: >-
+        home_jespersen_dokumente_bruno_awtrix_api_status_retrieval_transitions_yml
+      description: ''
+      tags:
+        - Status Retrieval
+      responses:
+        '200':
+          description: ''
+      security:
+        - transitions: []
+      servers:
+        - url: http://192.168.178.10
+  /api/effects:
+    get:
+      summary: Effects
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_status_retrieval_effects_yml
+      description: ''
+      tags:
+        - Status Retrieval
+      responses:
+        '200':
+          description: ''
+      security:
+        - effects: []
+      servers:
+        - url: http://192.168.178.10
+  /api/screen:
+    get:
+      summary: LiveView
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_liveview_yml
       description: ''
       tags:
         - ''
@@ -14,13 +71,13 @@ paths:
         '200':
           description: ''
       security:
-        - list_apps: []
+        - liveview: []
       servers:
         - url: http://192.168.178.10
-  /api/custom:
+  /api/power:
     post:
-      summary: Set Custom App
-      operationId: home_jespersen_dokumente_bruno_awtrix_api_set_custom_app_yml
+      summary: Power
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_power_control_power_yml
       description: >-
         # AWTRIX3 App Payload Reference
 
@@ -205,7 +262,270 @@ paths:
 
         | `save` | `bool` | `false` | Persist the app across reboots |
       tags:
+        - Power Control
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/power'
+      security:
+        - power: []
+      servers:
+        - url: http://192.168.178.10
+  /api/sleep:
+    post:
+      summary: Sleep
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_power_control_sleep_yml
+      description: >-
+        # AWTRIX3 App Payload Reference
+
+
+        ## Text
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `text` | `string` | — | The text to display |
+
+        | `textCase` | `int` | `0` | `0` = global setting, `1` = force
+        uppercase, `2` = show as sent |
+
+        | `topText` | `bool` | `false` | Render text above the icon instead of
+        next to it |
+
+        | `textOffset` | `int` | `0` | Vertical pixel offset for the text |
+
+        | `center` | `bool` | `true` | Center the text if it fits on screen |
+
+        | `color` | `string\|int` | — | Text color as hex string (`"FFFFFF"`) or
+        integer |
+
+        | `gradient` | `string[]\|int[]` | — | Gradient colors for the text
+        (array of hex strings or integers) |
+
+        | `blinkText` | `int` | `0` | Blink interval in milliseconds (0 = off) |
+
+        | `fadeText` | `int` | `0` | Fade interval in milliseconds (0 = off) |
+
+        | `noScroll` | `bool` | `false` | Disable text scrolling |
+
+        | `scrollSpeed` | `int` | — | Scroll speed in pixels per second |
+
+
+        ## Background & Effects
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `background` | `string\|int` | — | Background color as hex string or
+        integer |
+
+        | `rainbow` | `bool` | `false` | Show rainbow effect on text |
+
+        | `effect` | `string` | — | Background effect name (e.g.
+        `"TwinklingStars"`) — [full
+        list](https://blueforcer.github.io/awtrix3/#/effects) |
+
+        | `effectSettings` | `object` | — | Settings for the background effect
+        (see below) |
+
+        | `overlay` | `string` | — | Overlay effect name |
+
+
+        ### `effectSettings` Object
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `speed` | `int` | Effect speed |
+
+        | `palette` | `string` | Color palette (e.g. `"Rainbow"`) |
+
+        | `blend` | `bool` | Blend effect colors |
+
+
+        ## Icon
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `icon` | `string` | — | Icon as Base64-encoded image |
+
+        | `pushIcon` | `int` | `0` | `0` = icon stays, `1` = icon moves with
+        text (once), `2` = icon moves with text (repeats) |
+
+
+        ## Charts & Progress
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `bar` | `int[]` | — | Bar chart values — max 16 bars (11 with icon) |
+
+        | `line` | `int[]` | — | Line chart values — max 16 points (11 with
+        icon) |
+
+        | `autoscale` | `bool` | `false` | Auto-scale chart values |
+
+        | `barBC` | `string\|int` | — | Bar chart background color |
+
+        | `progress` | `int` | — | Progress bar value (`0`–`100`) |
+
+        | `progressC` | `string\|int` | — | Progress bar foreground color |
+
+        | `progressBC` | `string\|int` | — | Progress bar background color |
+
+
+        ## Drawing
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `draw` | `object[]` | Array of drawing instructions — [see
+        docs](https://blueforcer.github.io/awtrix3/#/api?id=drawing-instructions)
+        |
+
+
+        ## Timing & Lifecycle
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `duration` | `int` | — | Display duration in seconds |
+
+        | `repeat` | `int` | — | Number of times to repeat the animation |
+
+        | `lifetime` | `int` | — | App lifetime in seconds before it expires |
+
+        | `lifetimeMode` | `int` | `0` | `0` = delete app on expiry, `1` = mark
+        as stale with red border |
+
+
+        ## Notification Options
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `hold` | `bool` | `false` | Hold notification until dismissed
+        *(notification only)* |
+
+        | `stack` | `bool` | `true` | Stack notification; `false` immediately
+        replaces the current one |
+
+        | `wakeup` | `bool` | `false` | Wake the matrix display for this
+        notification |
+
+
+        ## Audio
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `sound` | `string` | Sound file name to play |
+
+        | `rtttl` | `string` | RTTTL ringtone string |
+
+        | `loopSound` | `bool` | Loop the sound while the app is displayed |
+
+
+        ## Other
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `pos` | `int` | — | App position in the loop |
+
+        | `clients` | `string[]` | — | Limit display to specific AWTRIX clients
+        (by name) |
+
+        | `save` | `bool` | `false` | Persist the app across reboots |
+      tags:
+        - Power Control
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/sleep'
+      security:
+        - sleep: []
+      servers:
+        - url: http://192.168.178.10
+  /api/sound:
+    post:
+      summary: Sound Playback
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_sound_playback_yml
+      description: ''
+      tags:
         - ''
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/sound_playback'
+      security:
+        - sound_playback: []
+      servers:
+        - url: http://192.168.178.10
+  /api/moodlight:
+    post:
+      summary: Mood Lighting
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_mood_lighting_yml
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/mood_lighting'
+      security:
+        - mood_lighting: []
+      servers:
+        - url: http://192.168.178.10
+  /api/indicator1:
+    post:
+      summary: Colored Indicators
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_colored_indicators_yml
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/colored_indicators'
+      security:
+        - colored_indicators: []
+      servers:
+        - url: http://192.168.178.10
+  /api/custom:
+    post:
+      summary: Delete Custom App
+      operationId: >-
+        home_jespersen_dokumente_bruno_awtrix_api_custom_apps_and_notifications_delete_custom_app_yml
+      description: ''
+      tags:
+        - Custom Apps and Notifications
       responses:
         '200':
           description: ''
@@ -217,16 +537,15 @@ paths:
           schema:
             type: string
           example: bruno
-      requestBody:
-        $ref: '#/components/requestBodies/set_custom_app'
       security:
-        - set_custom_app: []
+        - delete_custom_app: []
       servers:
         - url: http://192.168.178.10
   /api/notify:
     post:
       summary: Send Notification
-      operationId: home_jespersen_dokumente_bruno_awtrix_api_send_notification_yml
+      operationId: >-
+        home_jespersen_dokumente_bruno_awtrix_api_custom_apps_and_notifications_send_notification_yml
       description: >-
         # AWTRIX3 App Payload Reference
 
@@ -238,7 +557,9 @@ paths:
 
         |-------|------|---------|-------------|
 
-        | `text` | `string` | — | The text to display |
+        | `text` | `string` | — | The text to display [Colored
+        Text](https://blueforcer.github.io/awtrix3/#/api?id=display-text-in-colored-fragments)
+        |
 
         | `textCase` | `int` | `0` | `0` = global setting, `1` = force
         uppercase, `2` = show as sent |
@@ -411,7 +732,7 @@ paths:
 
         | `save` | `bool` | `false` | Persist the app across reboots |
       tags:
-        - ''
+        - Custom Apps and Notifications
       responses:
         '200':
           description: ''
@@ -421,24 +742,1171 @@ paths:
         - send_notification: []
       servers:
         - url: http://192.168.178.10
+  /api/notify/dismiss:
+    post:
+      summary: Dismiss Notification
+      operationId: >-
+        home_jespersen_dokumente_bruno_awtrix_api_custom_apps_and_notifications_dismiss_notification_yml
+      description: >-
+        # AWTRIX3 App Payload Reference
+
+
+        ## Text
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `text` | `string` | — | The text to display [Colored
+        Text](https://blueforcer.github.io/awtrix3/#/api?id=display-text-in-colored-fragments)
+        |
+
+        | `textCase` | `int` | `0` | `0` = global setting, `1` = force
+        uppercase, `2` = show as sent |
+
+        | `topText` | `bool` | `false` | Render text above the icon instead of
+        next to it |
+
+        | `textOffset` | `int` | `0` | Vertical pixel offset for the text |
+
+        | `center` | `bool` | `true` | Center the text if it fits on screen |
+
+        | `color` | `string\|int` | — | Text color as hex string (`"FFFFFF"`) or
+        integer |
+
+        | `gradient` | `string[]\|int[]` | — | Gradient colors for the text
+        (array of hex strings or integers) |
+
+        | `blinkText` | `int` | `0` | Blink interval in milliseconds (0 = off) |
+
+        | `fadeText` | `int` | `0` | Fade interval in milliseconds (0 = off) |
+
+        | `noScroll` | `bool` | `false` | Disable text scrolling |
+
+        | `scrollSpeed` | `int` | — | Scroll speed in pixels per second |
+
+
+        ## Background & Effects
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `background` | `string\|int` | — | Background color as hex string or
+        integer |
+
+        | `rainbow` | `bool` | `false` | Show rainbow effect on text |
+
+        | `effect` | `string` | — | Background effect name (e.g.
+        `"TwinklingStars"`) — [full
+        list](https://blueforcer.github.io/awtrix3/#/effects) |
+
+        | `effectSettings` | `object` | — | Settings for the background effect
+        (see below) |
+
+        | `overlay` | `string` | — | Overlay effect name |
+
+
+        ### `effectSettings` Object
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `speed` | `int` | Effect speed |
+
+        | `palette` | `string` | Color palette (e.g. `"Rainbow"`) |
+
+        | `blend` | `bool` | Blend effect colors |
+
+
+        ## Icon
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `icon` | `string` | — | Icon as Base64-encoded image |
+
+        | `pushIcon` | `int` | `0` | `0` = icon stays, `1` = icon moves with
+        text (once), `2` = icon moves with text (repeats) |
+
+
+        ## Charts & Progress
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `bar` | `int[]` | — | Bar chart values — max 16 bars (11 with icon) |
+
+        | `line` | `int[]` | — | Line chart values — max 16 points (11 with
+        icon) |
+
+        | `autoscale` | `bool` | `false` | Auto-scale chart values |
+
+        | `barBC` | `string\|int` | — | Bar chart background color |
+
+        | `progress` | `int` | — | Progress bar value (`0`–`100`) |
+
+        | `progressC` | `string\|int` | — | Progress bar foreground color |
+
+        | `progressBC` | `string\|int` | — | Progress bar background color |
+
+
+        ## Drawing
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `draw` | `object[]` | Array of drawing instructions — [see
+        docs](https://blueforcer.github.io/awtrix3/#/api?id=drawing-instructions)
+        |
+
+
+        ## Timing & Lifecycle
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `duration` | `int` | — | Display duration in seconds |
+
+        | `repeat` | `int` | — | Number of times to repeat the animation |
+
+        | `lifetime` | `int` | — | App lifetime in seconds before it expires |
+
+        | `lifetimeMode` | `int` | `0` | `0` = delete app on expiry, `1` = mark
+        as stale with red border |
+
+
+        ## Notification Options
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `hold` | `bool` | `false` | Hold notification until dismissed
+        *(notification only)* |
+
+        | `stack` | `bool` | `true` | Stack notification; `false` immediately
+        replaces the current one |
+
+        | `wakeup` | `bool` | `false` | Wake the matrix display for this
+        notification |
+
+
+        ## Audio
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `sound` | `string` | Sound file name to play |
+
+        | `rtttl` | `string` | RTTTL ringtone string |
+
+        | `loopSound` | `bool` | Loop the sound while the app is displayed |
+
+
+        ## Other
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `pos` | `int` | — | App position in the loop |
+
+        | `clients` | `string[]` | — | Limit display to specific AWTRIX clients
+        (by name) |
+
+        | `save` | `bool` | `false` | Persist the app across reboots |
+      tags:
+        - Custom Apps and Notifications
+      responses:
+        '200':
+          description: ''
+      security:
+        - dismiss_notification: []
+      servers:
+        - url: http://192.168.178.10
+  /api/nextapp:
+    post:
+      summary: Next App
+      operationId: >-
+        home_jespersen_dokumente_bruno_awtrix_api_custom_apps_and_notifications_switch_apps_next_app_yml
+      description: >-
+        # AWTRIX3 App Payload Reference
+
+
+        ## Text
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `text` | `string` | — | The text to display [Colored
+        Text](https://blueforcer.github.io/awtrix3/#/api?id=display-text-in-colored-fragments)
+        |
+
+        | `textCase` | `int` | `0` | `0` = global setting, `1` = force
+        uppercase, `2` = show as sent |
+
+        | `topText` | `bool` | `false` | Render text above the icon instead of
+        next to it |
+
+        | `textOffset` | `int` | `0` | Vertical pixel offset for the text |
+
+        | `center` | `bool` | `true` | Center the text if it fits on screen |
+
+        | `color` | `string\|int` | — | Text color as hex string (`"FFFFFF"`) or
+        integer |
+
+        | `gradient` | `string[]\|int[]` | — | Gradient colors for the text
+        (array of hex strings or integers) |
+
+        | `blinkText` | `int` | `0` | Blink interval in milliseconds (0 = off) |
+
+        | `fadeText` | `int` | `0` | Fade interval in milliseconds (0 = off) |
+
+        | `noScroll` | `bool` | `false` | Disable text scrolling |
+
+        | `scrollSpeed` | `int` | — | Scroll speed in pixels per second |
+
+
+        ## Background & Effects
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `background` | `string\|int` | — | Background color as hex string or
+        integer |
+
+        | `rainbow` | `bool` | `false` | Show rainbow effect on text |
+
+        | `effect` | `string` | — | Background effect name (e.g.
+        `"TwinklingStars"`) — [full
+        list](https://blueforcer.github.io/awtrix3/#/effects) |
+
+        | `effectSettings` | `object` | — | Settings for the background effect
+        (see below) |
+
+        | `overlay` | `string` | — | Overlay effect name |
+
+
+        ### `effectSettings` Object
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `speed` | `int` | Effect speed |
+
+        | `palette` | `string` | Color palette (e.g. `"Rainbow"`) |
+
+        | `blend` | `bool` | Blend effect colors |
+
+
+        ## Icon
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `icon` | `string` | — | Icon as Base64-encoded image |
+
+        | `pushIcon` | `int` | `0` | `0` = icon stays, `1` = icon moves with
+        text (once), `2` = icon moves with text (repeats) |
+
+
+        ## Charts & Progress
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `bar` | `int[]` | — | Bar chart values — max 16 bars (11 with icon) |
+
+        | `line` | `int[]` | — | Line chart values — max 16 points (11 with
+        icon) |
+
+        | `autoscale` | `bool` | `false` | Auto-scale chart values |
+
+        | `barBC` | `string\|int` | — | Bar chart background color |
+
+        | `progress` | `int` | — | Progress bar value (`0`–`100`) |
+
+        | `progressC` | `string\|int` | — | Progress bar foreground color |
+
+        | `progressBC` | `string\|int` | — | Progress bar background color |
+
+
+        ## Drawing
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `draw` | `object[]` | Array of drawing instructions — [see
+        docs](https://blueforcer.github.io/awtrix3/#/api?id=drawing-instructions)
+        |
+
+
+        ## Timing & Lifecycle
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `duration` | `int` | — | Display duration in seconds |
+
+        | `repeat` | `int` | — | Number of times to repeat the animation |
+
+        | `lifetime` | `int` | — | App lifetime in seconds before it expires |
+
+        | `lifetimeMode` | `int` | `0` | `0` = delete app on expiry, `1` = mark
+        as stale with red border |
+
+
+        ## Notification Options
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `hold` | `bool` | `false` | Hold notification until dismissed
+        *(notification only)* |
+
+        | `stack` | `bool` | `true` | Stack notification; `false` immediately
+        replaces the current one |
+
+        | `wakeup` | `bool` | `false` | Wake the matrix display for this
+        notification |
+
+
+        ## Audio
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `sound` | `string` | Sound file name to play |
+
+        | `rtttl` | `string` | RTTTL ringtone string |
+
+        | `loopSound` | `bool` | Loop the sound while the app is displayed |
+
+
+        ## Other
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `pos` | `int` | — | App position in the loop |
+
+        | `clients` | `string[]` | — | Limit display to specific AWTRIX clients
+        (by name) |
+
+        | `save` | `bool` | `false` | Persist the app across reboots |
+      tags:
+        - Custom Apps and Notifications
+      responses:
+        '200':
+          description: ''
+      security:
+        - next_app: []
+      servers:
+        - url: http://192.168.178.10
+  /api/previousapp:
+    post:
+      summary: Previous App
+      operationId: >-
+        home_jespersen_dokumente_bruno_awtrix_api_custom_apps_and_notifications_switch_apps_previous_app_yml
+      description: >-
+        # AWTRIX3 App Payload Reference
+
+
+        ## Text
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `text` | `string` | — | The text to display [Colored
+        Text](https://blueforcer.github.io/awtrix3/#/api?id=display-text-in-colored-fragments)
+        |
+
+        | `textCase` | `int` | `0` | `0` = global setting, `1` = force
+        uppercase, `2` = show as sent |
+
+        | `topText` | `bool` | `false` | Render text above the icon instead of
+        next to it |
+
+        | `textOffset` | `int` | `0` | Vertical pixel offset for the text |
+
+        | `center` | `bool` | `true` | Center the text if it fits on screen |
+
+        | `color` | `string\|int` | — | Text color as hex string (`"FFFFFF"`) or
+        integer |
+
+        | `gradient` | `string[]\|int[]` | — | Gradient colors for the text
+        (array of hex strings or integers) |
+
+        | `blinkText` | `int` | `0` | Blink interval in milliseconds (0 = off) |
+
+        | `fadeText` | `int` | `0` | Fade interval in milliseconds (0 = off) |
+
+        | `noScroll` | `bool` | `false` | Disable text scrolling |
+
+        | `scrollSpeed` | `int` | — | Scroll speed in pixels per second |
+
+
+        ## Background & Effects
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `background` | `string\|int` | — | Background color as hex string or
+        integer |
+
+        | `rainbow` | `bool` | `false` | Show rainbow effect on text |
+
+        | `effect` | `string` | — | Background effect name (e.g.
+        `"TwinklingStars"`) — [full
+        list](https://blueforcer.github.io/awtrix3/#/effects) |
+
+        | `effectSettings` | `object` | — | Settings for the background effect
+        (see below) |
+
+        | `overlay` | `string` | — | Overlay effect name |
+
+
+        ### `effectSettings` Object
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `speed` | `int` | Effect speed |
+
+        | `palette` | `string` | Color palette (e.g. `"Rainbow"`) |
+
+        | `blend` | `bool` | Blend effect colors |
+
+
+        ## Icon
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `icon` | `string` | — | Icon as Base64-encoded image |
+
+        | `pushIcon` | `int` | `0` | `0` = icon stays, `1` = icon moves with
+        text (once), `2` = icon moves with text (repeats) |
+
+
+        ## Charts & Progress
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `bar` | `int[]` | — | Bar chart values — max 16 bars (11 with icon) |
+
+        | `line` | `int[]` | — | Line chart values — max 16 points (11 with
+        icon) |
+
+        | `autoscale` | `bool` | `false` | Auto-scale chart values |
+
+        | `barBC` | `string\|int` | — | Bar chart background color |
+
+        | `progress` | `int` | — | Progress bar value (`0`–`100`) |
+
+        | `progressC` | `string\|int` | — | Progress bar foreground color |
+
+        | `progressBC` | `string\|int` | — | Progress bar background color |
+
+
+        ## Drawing
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `draw` | `object[]` | Array of drawing instructions — [see
+        docs](https://blueforcer.github.io/awtrix3/#/api?id=drawing-instructions)
+        |
+
+
+        ## Timing & Lifecycle
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `duration` | `int` | — | Display duration in seconds |
+
+        | `repeat` | `int` | — | Number of times to repeat the animation |
+
+        | `lifetime` | `int` | — | App lifetime in seconds before it expires |
+
+        | `lifetimeMode` | `int` | `0` | `0` = delete app on expiry, `1` = mark
+        as stale with red border |
+
+
+        ## Notification Options
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `hold` | `bool` | `false` | Hold notification until dismissed
+        *(notification only)* |
+
+        | `stack` | `bool` | `true` | Stack notification; `false` immediately
+        replaces the current one |
+
+        | `wakeup` | `bool` | `false` | Wake the matrix display for this
+        notification |
+
+
+        ## Audio
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `sound` | `string` | Sound file name to play |
+
+        | `rtttl` | `string` | RTTTL ringtone string |
+
+        | `loopSound` | `bool` | Loop the sound while the app is displayed |
+
+
+        ## Other
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `pos` | `int` | — | App position in the loop |
+
+        | `clients` | `string[]` | — | Limit display to specific AWTRIX clients
+        (by name) |
+
+        | `save` | `bool` | `false` | Persist the app across reboots |
+      tags:
+        - Custom Apps and Notifications
+      responses:
+        '200':
+          description: ''
+      security:
+        - previous_app: []
+      servers:
+        - url: http://192.168.178.10
+  /api/switch:
+    post:
+      summary: Switch to Specific App
+      operationId: >-
+        home_jespersen_dokumente_bruno_awtrix_api_custom_apps_and_notifications_switch_apps_switch_to_specific_app_yml
+      description: >-
+        # AWTRIX3 App Payload Reference
+
+
+        ## Text
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `text` | `string` | — | The text to display [Colored
+        Text](https://blueforcer.github.io/awtrix3/#/api?id=display-text-in-colored-fragments)
+        |
+
+        | `textCase` | `int` | `0` | `0` = global setting, `1` = force
+        uppercase, `2` = show as sent |
+
+        | `topText` | `bool` | `false` | Render text above the icon instead of
+        next to it |
+
+        | `textOffset` | `int` | `0` | Vertical pixel offset for the text |
+
+        | `center` | `bool` | `true` | Center the text if it fits on screen |
+
+        | `color` | `string\|int` | — | Text color as hex string (`"FFFFFF"`) or
+        integer |
+
+        | `gradient` | `string[]\|int[]` | — | Gradient colors for the text
+        (array of hex strings or integers) |
+
+        | `blinkText` | `int` | `0` | Blink interval in milliseconds (0 = off) |
+
+        | `fadeText` | `int` | `0` | Fade interval in milliseconds (0 = off) |
+
+        | `noScroll` | `bool` | `false` | Disable text scrolling |
+
+        | `scrollSpeed` | `int` | — | Scroll speed in pixels per second |
+
+
+        ## Background & Effects
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `background` | `string\|int` | — | Background color as hex string or
+        integer |
+
+        | `rainbow` | `bool` | `false` | Show rainbow effect on text |
+
+        | `effect` | `string` | — | Background effect name (e.g.
+        `"TwinklingStars"`) — [full
+        list](https://blueforcer.github.io/awtrix3/#/effects) |
+
+        | `effectSettings` | `object` | — | Settings for the background effect
+        (see below) |
+
+        | `overlay` | `string` | — | Overlay effect name |
+
+
+        ### `effectSettings` Object
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `speed` | `int` | Effect speed |
+
+        | `palette` | `string` | Color palette (e.g. `"Rainbow"`) |
+
+        | `blend` | `bool` | Blend effect colors |
+
+
+        ## Icon
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `icon` | `string` | — | Icon as Base64-encoded image |
+
+        | `pushIcon` | `int` | `0` | `0` = icon stays, `1` = icon moves with
+        text (once), `2` = icon moves with text (repeats) |
+
+
+        ## Charts & Progress
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `bar` | `int[]` | — | Bar chart values — max 16 bars (11 with icon) |
+
+        | `line` | `int[]` | — | Line chart values — max 16 points (11 with
+        icon) |
+
+        | `autoscale` | `bool` | `false` | Auto-scale chart values |
+
+        | `barBC` | `string\|int` | — | Bar chart background color |
+
+        | `progress` | `int` | — | Progress bar value (`0`–`100`) |
+
+        | `progressC` | `string\|int` | — | Progress bar foreground color |
+
+        | `progressBC` | `string\|int` | — | Progress bar background color |
+
+
+        ## Drawing
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `draw` | `object[]` | Array of drawing instructions — [see
+        docs](https://blueforcer.github.io/awtrix3/#/api?id=drawing-instructions)
+        |
+
+
+        ## Timing & Lifecycle
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `duration` | `int` | — | Display duration in seconds |
+
+        | `repeat` | `int` | — | Number of times to repeat the animation |
+
+        | `lifetime` | `int` | — | App lifetime in seconds before it expires |
+
+        | `lifetimeMode` | `int` | `0` | `0` = delete app on expiry, `1` = mark
+        as stale with red border |
+
+
+        ## Notification Options
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `hold` | `bool` | `false` | Hold notification until dismissed
+        *(notification only)* |
+
+        | `stack` | `bool` | `true` | Stack notification; `false` immediately
+        replaces the current one |
+
+        | `wakeup` | `bool` | `false` | Wake the matrix display for this
+        notification |
+
+
+        ## Audio
+
+
+        | Field | Type | Description |
+
+        |-------|------|-------------|
+
+        | `sound` | `string` | Sound file name to play |
+
+        | `rtttl` | `string` | RTTTL ringtone string |
+
+        | `loopSound` | `bool` | Loop the sound while the app is displayed |
+
+
+        ## Other
+
+
+        | Field | Type | Default | Description |
+
+        |-------|------|---------|-------------|
+
+        | `pos` | `int` | — | App position in the loop |
+
+        | `clients` | `string[]` | — | Limit display to specific AWTRIX clients
+        (by name) |
+
+        | `save` | `bool` | `false` | Persist the app across reboots |
+      tags:
+        - Custom Apps and Notifications
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/switch_to_specific_app'
+      security:
+        - switch_to_specific_app: []
+      servers:
+        - url: http://192.168.178.10
+  /api/settings:
+    post:
+      summary: Update
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_settings_update_yml
+      description: |-
+        # AWTRIX Configuration
+
+        ## Matrix & Display
+
+        | Key | Value | Description |
+        |-----|-------|-------------|
+        | `MATP` | `true` | Matrix power on |
+        | `ABRI` | `true` | Auto-brightness enabled |
+        | `BRI` | `2` | Brightness level |
+        | `GAMMA` | `1.90` | Gamma correction |
+        | `UPPERCASE` | `true` | Uppercase text rendering |
+        | `BLOCKN` | `false` | Block night mode disabled |
+        | `OVERLAY` | `"clear"` | Overlay mode |
+
+        ## Transition & Animation
+
+        | Key | Value | Description |
+        |-----|-------|-------------|
+        | `ATRANS` | `true` | Auto-transition enabled |
+        | `TEFF` | `1` | Transition effect |
+        | `TSPEED` | `200` | Transition speed (ms) |
+        | `ATIME` | `7` | App display time (s) |
+        | `TMODE` | `1` | Transition mode |
+        | `MAT` | `2` | Matrix animation type |
+
+        ## Text & Scroll
+
+        | Key | Value | Description |
+        |-----|-------|-------------|
+        | `TCOL` | `#FF0000` | Text color |
+        | `SSPEED` | `100` | Scroll speed |
+
+        ## Clock Widget
+
+        | Key | Value | Description |
+        |-----|-------|-------------|
+        | `TIM` | `true` | Show time |
+        | `DAT` | `false` | Show date |
+        | `TFORMAT` | `"%H %M"` | Time format |
+        | `DFORMAT` | `"%d.%m.%y"` | Date format |
+        | `TIME_COL` | `#000000` | Time color |
+        | `DATE_COL` | `#000000` | Date color |
+        | `SOM` | `true` | Start of month display |
+        | `CEL` | `true` | Temperature unit: Celsius |
+
+        ## Color Corrections
+
+        | Key | Value | Description |
+        |-----|-------|-------------|
+        | `CCORRECTION` | `#000000` | Color correction |
+        | `CTEMP` | `#000000` | Color temperature |
+
+        ## Calendar Header
+
+        | Key | Value | Description |
+        |-----|-------|-------------|
+        | `CHCOL` | `#FF0000` | Calendar header color |
+        | `CTCOL` | `#000000` | Calendar text color |
+        | `CBCOL` | `#FFFFFF` | Calendar background color |
+
+        ## Widgets
+
+        | Key | Value | Description |
+        |-----|-------|-------------|
+        | `HUM` | `false` | Show humidity |
+        | `TEMP` | `false` | Show temperature |
+        | `BAT` | `false` | Show battery |
+        | `HUM_COL` | `#000000` | Humidity color |
+        | `TEMP_COL` | `#000000` | Temperature color |
+        | `BAT_COL` | `#000000` | Battery color |
+
+        ## Weather Display
+
+        | Key | Value | Description |
+        |-----|-------|-------------|
+        | `WD` | `true` | Weather display on |
+        | `WDCA` | `#FFFFFF` | Weather day color (active) |
+        | `WDCI` | `#666666` | Weather day color (inactive) |
+
+        ## Audio
+
+        | Key | Value | Description |
+        |-----|-------|-------------|
+        | `SOUND` | `true` | Sound enabled |
+        | `VOL` | `25` | Volume level |
+      tags:
+        - Settings
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/update'
+      security:
+        - update: []
+      servers:
+        - url: http://192.168.178.10
+    get:
+      summary: Settings
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_settings_settings_yml
+      description: ''
+      tags:
+        - Settings
+      responses:
+        '200':
+          description: ''
+      security:
+        - settings: []
+      servers:
+        - url: http://192.168.178.10
+  /api/resetSettings:
+    post:
+      summary: Clear
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_settings_clear_yml
+      description: ''
+      tags:
+        - Settings
+      responses:
+        '200':
+          description: ''
+      security:
+        - clear: []
+      servers:
+        - url: http://192.168.178.10
+  /api/doupdate:
+    post:
+      summary: Update
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_update_yml
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - update: []
+      servers:
+        - url: http://192.168.178.10
+  /api/reboot:
+    post:
+      summary: Reboot
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_reboot_yml
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - reboot: []
+      servers:
+        - url: http://192.168.178.10
+  /api/erase:
+    post:
+      summary: Erase
+      operationId: home_jespersen_dokumente_bruno_awtrix_api_erase_yml
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - erase: []
+      servers:
+        - url: http://192.168.178.10
 servers: []
 components:
   schemas:
+    power:
+      type: object
+      properties:
+        power:
+          type: boolean
+      example:
+        power: true
+    sleep:
+      type: object
+      properties:
+        sleep:
+          type: integer
+      example:
+        sleep: 100
+    sound_playback:
+      type: object
+      properties:
+        sound:
+          type: string
+      example:
+        sound: alarm
+    mood_lighting:
+      type: object
+      properties: {}
+    colored_indicators:
+      type: object
+      properties: {}
     send_notification:
       type: object
-      properties:
-        text:
-          type: string
-      example:
-        text: EIER
-    set_custom_app:
+      properties: {}
+    switch_to_specific_app:
       type: object
       properties:
-        text:
+        name:
           type: string
       example:
-        text: EIER
+        name: Time
+    update:
+      type: object
+      properties:
+        MATP:
+          type: boolean
+        ABRI:
+          type: boolean
+        BRI:
+          type: integer
+        ATRANS:
+          type: boolean
+        TCOL:
+          type: integer
+        TEFF:
+          type: integer
+        TSPEED:
+          type: integer
+        ATIME:
+          type: integer
+        TMODE:
+          type: integer
+        CHCOL:
+          type: integer
+        CTCOL:
+          type: integer
+        CBCOL:
+          type: integer
+        TFORMAT:
+          type: string
+        DFORMAT:
+          type: string
+        SOM:
+          type: boolean
+        CEL:
+          type: boolean
+        BLOCKN:
+          type: boolean
+        MAT:
+          type: integer
+        SOUND:
+          type: boolean
+        GAMMA:
+          type: number
+        UPPERCASE:
+          type: boolean
+        CCORRECTION:
+          type: string
+        CTEMP:
+          type: string
+        WD:
+          type: boolean
+        WDCA:
+          type: integer
+        WDCI:
+          type: integer
+        TIME_COL:
+          type: integer
+        DATE_COL:
+          type: integer
+        HUM_COL:
+          type: integer
+        TEMP_COL:
+          type: integer
+        BAT_COL:
+          type: integer
+        SSPEED:
+          type: integer
+        TIM:
+          type: boolean
+        DAT:
+          type: boolean
+        HUM:
+          type: boolean
+        TEMP:
+          type: boolean
+        BAT:
+          type: boolean
+        VOL:
+          type: integer
+        OVERLAY:
+          type: string
+      example:
+        MATP: true
+        ABRI: true
+        BRI: 2
+        ATRANS: true
+        TCOL: 16711680
+        TEFF: 1
+        TSPEED: 200
+        ATIME: 7
+        TMODE: 1
+        CHCOL: 16711680
+        CTCOL: 0
+        CBCOL: 16777215
+        TFORMAT: '%H %M'
+        DFORMAT: '%d.%m.%y'
+        SOM: true
+        CEL: true
+        BLOCKN: false
+        MAT: 2
+        SOUND: true
+        GAMMA: 1.899999976
+        UPPERCASE: true
+        CCORRECTION: '#000000'
+        CTEMP: '#000000'
+        WD: true
+        WDCA: 16777215
+        WDCI: 6710886
+        TIME_COL: 0
+        DATE_COL: 0
+        HUM_COL: 0
+        TEMP_COL: 0
+        BAT_COL: 0
+        SSPEED: 100
+        TIM: true
+        DAT: false
+        HUM: false
+        TEMP: false
+        BAT: false
+        VOL: 25
+        OVERLAY: clear
   requestBodies:
+    power:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/power'
+      description: ''
+      required: true
+    sleep:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/sleep'
+      description: ''
+      required: true
+    sound_playback:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/sound_playback'
+      description: ''
+      required: true
+    mood_lighting:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/mood_lighting'
+      description: ''
+      required: true
+    colored_indicators:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/colored_indicators'
+      description: ''
+      required: true
     send_notification:
       content:
         application/json:
@@ -446,23 +1914,81 @@ components:
             $ref: '#/components/schemas/send_notification'
       description: ''
       required: true
-    set_custom_app:
+    switch_to_specific_app:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/set_custom_app'
+            $ref: '#/components/schemas/switch_to_specific_app'
+      description: ''
+      required: true
+    update:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/update'
       description: ''
       required: true
   securitySchemes:
-    list_apps:
+    loop:
       type: http
       scheme: basic
-    remove_custom_app:
+    stats:
+      type: http
+      scheme: basic
+    transitions:
+      type: http
+      scheme: basic
+    effects:
+      type: http
+      scheme: basic
+    liveview:
+      type: http
+      scheme: basic
+    power:
+      type: http
+      scheme: basic
+    sleep:
+      type: http
+      scheme: basic
+    sound_playback:
+      type: http
+      scheme: basic
+    mood_lighting:
+      type: http
+      scheme: basic
+    colored_indicators:
+      type: http
+      scheme: basic
+    delete_custom_app:
       type: http
       scheme: basic
     send_notification:
       type: http
       scheme: basic
-    set_custom_app:
+    dismiss_notification:
+      type: http
+      scheme: basic
+    next_app:
+      type: http
+      scheme: basic
+    previous_app:
+      type: http
+      scheme: basic
+    switch_to_specific_app:
+      type: http
+      scheme: basic
+    update:
+      type: http
+      scheme: basic
+    settings:
+      type: http
+      scheme: basic
+    clear:
+      type: http
+      scheme: basic
+    reboot:
+      type: http
+      scheme: basic
+    erase:
       type: http
       scheme: basic

@@ -1,0 +1,163 @@
+info:
+  name: Set Custom App
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: ""
+  body:
+    type: json
+    data: |-
+      {
+        "text": "text", // See also https://blueforcer.github.io/awtrix3/#/api?id=display-text-in-colored-fragments
+        "textCase": 210, // 0=global setting, 1 = forces uppercase; 2 = shows as sent.
+        "topText": true,
+        "textOffset": 1,
+        "center": true,
+        "color": "FFFFFF", // or [int]
+        "gradient": ["FFFFFF"], // or [int]
+        "blinkText": 1,
+        "fadeText": 1,
+        "background": "FF00FF", // [int]
+        "rainbow": true,
+        "icon": "BASE64",
+        "pushIcon": 1, // 0 = Icon doesn't move. 1 = Icon moves with text and will not appear again. 2 = Icon moves with text but appears again
+        "repeat": 1,
+        
+        "duration": 1,
+        "hold": true, // notification only
+        "sound": "",
+        "rtttl": "",
+        "loopSound": true,
+        "bar": [1], // max 16, with icon 11
+        "line": [1], // max 16, with icon 11
+        "autoscale": true,
+        "barBC": "", // or [int]
+        "progress": 1,
+        "progressC": "", // or [int]
+        "progressBC": "", // or [int]
+        "pos": 1,
+        "draw": [{}], // SEE https://blueforcer.github.io/awtrix3/#/api?id=drawing-instructions
+        
+        "lifetime": 1,
+        "lifetimeMode": 0, // 0 = deletes the app, 1 = marks it as staled with a red rectangle around the app.
+        "stack": true, // Defines if the notification will be stacked. false will immediately replace the current notification.
+        "wakeup": true, // let the Matrix wake up notification
+        "noScroll": true,
+        "clients": ["bruno"],
+        "scrollSpeed": 1,
+        "effect": "TwinklingStars", // https://blueforcer.github.io/awtrix3/#/effects
+        "effectSettings": { // https://blueforcer.github.io/awtrix3/#/effects
+          "speed": 3,
+          "palette": "Rainbow",
+          "blend": true
+        },
+        "save": false,
+        "overlay": ""
+      }
+  auth:
+    type: basic
+    username: "{{AWTRIX_USER}}"
+    password: "{{AWTRIX_PASSWORD}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  # AWTRIX3 App Payload Reference
+
+  ## Text
+
+  | Field | Type | Default | Description |
+  |-------|------|---------|-------------|
+  | `text` | `string` | — | The text to display [Colored Text](https://blueforcer.github.io/awtrix3/#/api?id=display-text-in-colored-fragments)|
+  | `textCase` | `int` | `0` | `0` = global setting, `1` = force uppercase, `2` = show as sent |
+  | `topText` | `bool` | `false` | Render text above the icon instead of next to it |
+  | `textOffset` | `int` | `0` | Vertical pixel offset for the text |
+  | `center` | `bool` | `true` | Center the text if it fits on screen |
+  | `color` | `string\|int` | — | Text color as hex string (`"FFFFFF"`) or integer |
+  | `gradient` | `string[]\|int[]` | — | Gradient colors for the text (array of hex strings or integers) |
+  | `blinkText` | `int` | `0` | Blink interval in milliseconds (0 = off) |
+  | `fadeText` | `int` | `0` | Fade interval in milliseconds (0 = off) |
+  | `noScroll` | `bool` | `false` | Disable text scrolling |
+  | `scrollSpeed` | `int` | — | Scroll speed in pixels per second |
+
+  ## Background & Effects
+
+  | Field | Type | Default | Description |
+  |-------|------|---------|-------------|
+  | `background` | `string\|int` | — | Background color as hex string or integer |
+  | `rainbow` | `bool` | `false` | Show rainbow effect on text |
+  | `effect` | `string` | — | Background effect name (e.g. `"TwinklingStars"`) — [full list](https://blueforcer.github.io/awtrix3/#/effects) |
+  | `effectSettings` | `object` | — | Settings for the background effect (see below) |
+  | `overlay` | `string` | — | Overlay effect name |
+
+  ### `effectSettings` Object
+
+  | Field | Type | Description |
+  |-------|------|-------------|
+  | `speed` | `int` | Effect speed |
+  | `palette` | `string` | Color palette (e.g. `"Rainbow"`) |
+  | `blend` | `bool` | Blend effect colors |
+
+  ## Icon
+
+  | Field | Type | Default | Description |
+  |-------|------|---------|-------------|
+  | `icon` | `string` | — | Icon as Base64-encoded image |
+  | `pushIcon` | `int` | `0` | `0` = icon stays, `1` = icon moves with text (once), `2` = icon moves with text (repeats) |
+
+  ## Charts & Progress
+
+  | Field | Type | Default | Description |
+  |-------|------|---------|-------------|
+  | `bar` | `int[]` | — | Bar chart values — max 16 bars (11 with icon) |
+  | `line` | `int[]` | — | Line chart values — max 16 points (11 with icon) |
+  | `autoscale` | `bool` | `false` | Auto-scale chart values |
+  | `barBC` | `string\|int` | — | Bar chart background color |
+  | `progress` | `int` | — | Progress bar value (`0`–`100`) |
+  | `progressC` | `string\|int` | — | Progress bar foreground color |
+  | `progressBC` | `string\|int` | — | Progress bar background color |
+
+  ## Drawing
+
+  | Field | Type | Description |
+  |-------|------|-------------|
+  | `draw` | `object[]` | Array of drawing instructions — [see docs](https://blueforcer.github.io/awtrix3/#/api?id=drawing-instructions) |
+
+  ## Timing & Lifecycle
+
+  | Field | Type | Default | Description |
+  |-------|------|---------|-------------|
+  | `duration` | `int` | — | Display duration in seconds |
+  | `repeat` | `int` | — | Number of times to repeat the animation |
+  | `lifetime` | `int` | — | App lifetime in seconds before it expires |
+  | `lifetimeMode` | `int` | `0` | `0` = delete app on expiry, `1` = mark as stale with red border |
+
+  ## Notification Options
+
+  | Field | Type | Default | Description |
+  |-------|------|---------|-------------|
+  | `hold` | `bool` | `false` | Hold notification until dismissed *(notification only)* |
+  | `stack` | `bool` | `true` | Stack notification; `false` immediately replaces the current one |
+  | `wakeup` | `bool` | `false` | Wake the matrix display for this notification |
+
+  ## Audio
+
+  | Field | Type | Description |
+  |-------|------|-------------|
+  | `sound` | `string` | Sound file name to play |
+  | `rtttl` | `string` | RTTTL ringtone string |
+  | `loopSound` | `bool` | Loop the sound while the app is displayed |
+
+  ## Other
+
+  | Field | Type | Default | Description |
+  |-------|------|---------|-------------|
+  | `pos` | `int` | — | App position in the loop |
+  | `clients` | `string[]` | — | Limit display to specific AWTRIX clients (by name) |
+  | `save` | `bool` | `false` | Persist the app across reboots |

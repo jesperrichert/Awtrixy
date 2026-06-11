@@ -1,0 +1,26 @@
+info:
+  name: Mood Lighting
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{AWTRIX_WEB_URL}}/api/moodlight"
+  body:
+    type: json
+    data: |-
+      {
+        "brightness": 60,
+        "kelvin": 2300,
+        "color": "#FF00FF" // or [int]
+      }
+  auth:
+    type: basic
+    username: "{{AWTRIX_USER}}"
+    password: "{{AWTRIX_PASSWORD}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,149 @@
+info:
+  name: Update
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{AWTRIX_WEB_URL}}/api/settings"
+  body:
+    type: json
+    data: |-
+      {
+        "MATP": true,
+        "ABRI": true,
+        "BRI": 2,
+        "ATRANS": true,
+        "TCOL": 16711680,
+        "TEFF": 1,
+        "TSPEED": 200,
+        "ATIME": 7,
+        "TMODE": 1,
+        "CHCOL": 16711680,
+        "CTCOL": 0,
+        "CBCOL": 16777215,
+        "TFORMAT": "%H %M",
+        "DFORMAT": "%d.%m.%y",
+        "SOM": true,
+        "CEL": true,
+        "BLOCKN": false,
+        "MAT": 2,
+        "SOUND": true,
+        "GAMMA": 1.899999976,
+        "UPPERCASE": true,
+        "CCORRECTION": "#000000",
+        "CTEMP": "#000000",
+        "WD": true,
+        "WDCA": 16777215,
+        "WDCI": 6710886,
+        "TIME_COL": 0,
+        "DATE_COL": 0,
+        "HUM_COL": 0,
+        "TEMP_COL": 0,
+        "BAT_COL": 0,
+        "SSPEED": 100,
+        "TIM": true,
+        "DAT": false,
+        "HUM": false,
+        "TEMP": false,
+        "BAT": false,
+        "VOL": 25,
+        "OVERLAY": "clear"
+      }
+  auth:
+    type: basic
+    username: "{{AWTRIX_USER}}"
+    password: "{{AWTRIX_PASSWORD}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  # AWTRIX Configuration
+
+  ## Matrix & Display
+
+  | Key | Value | Description |
+  |-----|-------|-------------|
+  | `MATP` | `true` | Matrix power on |
+  | `ABRI` | `true` | Auto-brightness enabled |
+  | `BRI` | `2` | Brightness level |
+  | `GAMMA` | `1.90` | Gamma correction |
+  | `UPPERCASE` | `true` | Uppercase text rendering |
+  | `BLOCKN` | `false` | Block night mode disabled |
+  | `OVERLAY` | `"clear"` | Overlay mode |
+
+  ## Transition & Animation
+
+  | Key | Value | Description |
+  |-----|-------|-------------|
+  | `ATRANS` | `true` | Auto-transition enabled |
+  | `TEFF` | `1` | Transition effect |
+  | `TSPEED` | `200` | Transition speed (ms) |
+  | `ATIME` | `7` | App display time (s) |
+  | `TMODE` | `1` | Transition mode |
+  | `MAT` | `2` | Matrix animation type |
+
+  ## Text & Scroll
+
+  | Key | Value | Description |
+  |-----|-------|-------------|
+  | `TCOL` | `#FF0000` | Text color |
+  | `SSPEED` | `100` | Scroll speed |
+
+  ## Clock Widget
+
+  | Key | Value | Description |
+  |-----|-------|-------------|
+  | `TIM` | `true` | Show time |
+  | `DAT` | `false` | Show date |
+  | `TFORMAT` | `"%H %M"` | Time format |
+  | `DFORMAT` | `"%d.%m.%y"` | Date format |
+  | `TIME_COL` | `#000000` | Time color |
+  | `DATE_COL` | `#000000` | Date color |
+  | `SOM` | `true` | Start of month display |
+  | `CEL` | `true` | Temperature unit: Celsius |
+
+  ## Color Corrections
+
+  | Key | Value | Description |
+  |-----|-------|-------------|
+  | `CCORRECTION` | `#000000` | Color correction |
+  | `CTEMP` | `#000000` | Color temperature |
+
+  ## Calendar Header
+
+  | Key | Value | Description |
+  |-----|-------|-------------|
+  | `CHCOL` | `#FF0000` | Calendar header color |
+  | `CTCOL` | `#000000` | Calendar text color |
+  | `CBCOL` | `#FFFFFF` | Calendar background color |
+
+  ## Widgets
+
+  | Key | Value | Description |
+  |-----|-------|-------------|
+  | `HUM` | `false` | Show humidity |
+  | `TEMP` | `false` | Show temperature |
+  | `BAT` | `false` | Show battery |
+  | `HUM_COL` | `#000000` | Humidity color |
+  | `TEMP_COL` | `#000000` | Temperature color |
+  | `BAT_COL` | `#000000` | Battery color |
+
+  ## Weather Display
+
+  | Key | Value | Description |
+  |-----|-------|-------------|
+  | `WD` | `true` | Weather display on |
+  | `WDCA` | `#FFFFFF` | Weather day color (active) |
+  | `WDCI` | `#666666` | Weather day color (inactive) |
+
+  ## Audio
+
+  | Key | Value | Description |
+  |-----|-------|-------------|
+  | `SOUND` | `true` | Sound enabled |
+  | `VOL` | `25` | Volume level |

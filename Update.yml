@@ -1,0 +1,18 @@
+info:
+  name: Update
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{AWTRIX_WEB_URL}}/api/doupdate"
+  auth:
+    type: basic
+    username: "{{AWTRIX_USER}}"
+    password: "{{AWTRIX_PASSWORD}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

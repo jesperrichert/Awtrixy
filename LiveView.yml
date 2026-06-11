@@ -1,0 +1,18 @@
+info:
+  name: LiveView
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{AWTRIX_WEB_URL}}/api/screen"
+  auth:
+    type: basic
+    username: "{{AWTRIX_USER}}"
+    password: "{{AWTRIX_PASSWORD}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

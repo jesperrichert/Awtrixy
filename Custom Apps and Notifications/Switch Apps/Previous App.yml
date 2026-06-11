@@ -1,21 +1,11 @@
 info:
-  name: Set Custom App
+  name: Previous App
   type: http
-  seq: 1
+  seq: 2
 
 http:
   method: POST
-  url: "{{AWTRIX_WEB_URL}}/api/custom?name=bruno"
-  params:
-    - name: name
-      value: bruno
-      type: query
-  body:
-    type: json
-    data: |-
-      {
-        "text": "EIER"
-      }
+  url: "{{AWTRIX_WEB_URL}}/api/previousapp"
   auth:
     type: basic
     username: "{{AWTRIX_USER}}"
@@ -34,7 +24,7 @@ docs: |-
 
   | Field | Type | Default | Description |
   |-------|------|---------|-------------|
-  | `text` | `string` | — | The text to display |
+  | `text` | `string` | — | The text to display [Colored Text](https://blueforcer.github.io/awtrix3/#/api?id=display-text-in-colored-fragments) |
   | `textCase` | `int` | `0` | `0` = global setting, `1` = force uppercase, `2` = show as sent |
   | `topText` | `bool` | `false` | Render text above the icon instead of next to it |
   | `textOffset` | `int` | `0` | Vertical pixel offset for the text |

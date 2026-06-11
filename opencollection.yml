@@ -15,7 +15,9 @@ config:
       bypassProxy: ""
 
 docs:
-  content: https://github.com/jesperrichert/Awtrixy
+  content: |-
+    Repository: https://github.com/jesperrichert/Awtrixy
+    blueforcer Docs: https://blueforcer.github.io/awtrix3/#/api?id=table-of-contents
   type: text/markdown
 bundled: false
 extensions:

@@ -1,15 +1,11 @@
 info:
-  name: Remove Custom App
+  name: Reboot
   type: http
-  seq: 3
+  seq: 6
 
 http:
   method: POST
-  url: "{{AWTRIX_WEB_URL}}/api/custom?name=Time"
-  params:
-    - name: name
-      value: Time
-      type: query
+  url: "{{AWTRIX_WEB_URL}}/api/reboot"
   auth:
     type: basic
     username: "{{AWTRIX_USER}}"
