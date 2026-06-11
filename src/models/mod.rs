@@ -3,7 +3,6 @@ mod moodlight_dto;
 mod colored_indicator_dto;
 mod draw;
 mod settings_dto;
-// re-exports
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(untagged)]

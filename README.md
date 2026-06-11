@@ -11,8 +11,8 @@ cargo add warptrixy
 ```rust
         let client = Warptrixy::new(Config {
             url: "http://192.168.178.10".to_string(),
-            username: "jesforge".to_string(),
-            password: "ZpSIuaCLY3fAE2PF1wMStOb1d".to_string(),
+            username: "user".to_string(),
+            password: "password".to_string(),
         });
         client.send_notification(
             CustomAppDto {
