@@ -5,6 +5,7 @@ edition = "2024"
 
 [dependencies]
 cron = "0.16.0"
-reqwest = "0.13.4"
+reqwest = { version = "0.13.4", features = ["form"] }
 tokio = { version = "1.52.3", features = ["rt", "rt-multi-thread", "macros"] }
 warptrixy = "0.1.0"
+serde = { version = "1.0.228", features = ["derive"] }

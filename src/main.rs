@@ -1,5 +1,10 @@
+mod disbot_app;
+mod twitch_app;
+
+use crate::disbot_app::disbot_app;
 use std::time::{Duration, Instant};
 use warptrixy::{Config, CustomAppDto, TextValue, WarptrixyClient};
+use crate::twitch_app::twitch_app;
 
 #[tokio::main]
 async fn main() {
@@ -14,63 +19,14 @@ async fn main() {
         password: password.to_string(),
     });
 
-    let code = client
-        .send_notification(warptrixy::CustomAppDto {
-            text: Option::from(TextValue::String("TEST".to_string())),
-            text_case: None,
-            top_text: None,
-            text_offset: None,
-            center: None,
-            color: None,
-            gradient: None,
-            blink_text: None,
-            fade_text: None,
-            background: None,
-            rainbow: None,
-            icon: None,
-            push_icon: None,
-            repeat: None,
-            duration: None,
-            hold: None,
-            sound: None,
-            rtttl: None,
-            loop_sound: None,
-            bar: None,
-            line: None,
-            autoscale: None,
-            bar_bc: None,
-            progress: None,
-            progress_c: None,
-            progress_bc: None,
-            pos: None,
-            draw: None,
-            lifetime: None,
-            lifetime_mode: None,
-            stack: None,
-            wakeup: None,
-            no_scroll: None,
-            clients: None,
-            scroll_speed: None,
-            effect: None,
-            effect_settings: None,
-            save: None,
-            overlay: None,
-        })
-        .await
-        .unwrap();
-    println!("{}", code);
-    println!("{:?}", client.set_power(true).await.unwrap());
-
-  /*
-    let now = Instant::now();
-    let run_every = Duration::from_secs(10);
-    let mut next_run = now + run_every;
+    let time = Instant::now();
+    let run_every = Duration::from_mins(5);
     loop {
-        println!("Run Every? {}", (now - next_run).as_secs());
-        if (now - next_run).as_secs() > 1 {
-            next_run = Instant::now() + run_every;
-            println!("Running Scheduler for Display Update")
+        if Instant::now() - time >= run_every {
+            println!("Time taken to run the following events...");
+
+            disbot_app(&client).await;
+            twitch_app(&client).await;
         }
     }
-   */
 }
