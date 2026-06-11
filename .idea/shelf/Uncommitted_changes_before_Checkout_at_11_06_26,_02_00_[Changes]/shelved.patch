@@ -1,0 +1,134 @@
+Index: src/lib.rs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>mod requests;\nmod models;\nmod config;\nmod client;\n// re-exports\n\npub use config::Config as Config;\npub use models::*;\npub use requests::*;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/lib.rs b/src/lib.rs
+--- a/src/lib.rs	(revision 4afba5b3c38680cd20288957967357006f0e353e)
++++ b/src/lib.rs	(date 1781136028215)
+@@ -1,9 +1,23 @@
+-mod requests;
+-mod models;
+-mod config;
+ mod client;
++mod config;
++mod models;
++mod requests;
+ // re-exports
+ 
+-pub use config::Config as Config;
++pub use config::Config;
+ pub use models::*;
+-pub use requests::*;
+\ No newline at end of file
++
++#[cfg(test)]
++mod tests {
++    use crate::client::Warptrixy;
++    use crate::Config;
++
++    #[test]
++    fn it_works() {
++        let client = Warptrixy::new(Config {
++            url: "http://1.1.1.1".to_string(),
++            username: "".to_string(),
++            password: "".to_string(),
++        });
++    }
++}
+Index: src/client.rs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>use crate::Config;\nuse reqwest::Client;\n\npub struct Warptrixy {\n    pub config: Config,\n    pub(crate) client: Client,\n}\n\nimpl Warptrixy {\n    pub fn new(config: Config) -> Self {\n        Warptrixy {\n            config,\n            client: Client::new(),\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/client.rs b/src/client.rs
+--- a/src/client.rs	(revision 4afba5b3c38680cd20288957967357006f0e353e)
++++ b/src/client.rs	(date 1781135901835)
+@@ -14,3 +14,5 @@
+         }
+     }
+ }
++
++
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"ALL\" />\n  </component>\n  <component name=\"CargoProjects\">\n    <cargoProject FILE=\"$PROJECT_DIR$/Cargo.toml\">\n      <package file=\"$PROJECT_DIR$\">\n        <feature name=\"default\" enabled=\"true\" />\n      </package>\n    </cargoProject>\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"9d59852d-2d41-4e21-9d99-868533792a0e\" name=\"Changes\" comment=\"update workspace.xml\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExecutionTargetManager\" SELECTED_TARGET=\"RsBuildProfile:dev\" />\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MacroExpansionManager\">\n    <option name=\"directoryName\" value=\"iY1qkDtu\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"git-widget-placeholder\": \"lib\",\n    \"org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon\": \"\",\n    \"settings.editor.selected.configurable\": \"language.rust\"\n  }\n}]]></component>\n  <component name=\"RustProjectSettings\">\n    <option name=\"toolchainHomeDirectory\" value=\"$USER_HOME$/.cargo/bin\" />\n  </component>\n  <component name=\"TaskManager\">\n    <task id=\"LOCAL-00001\" summary=\"add idea config files.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1781135321589</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1781135321589</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"add .gitignore\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1781135381296</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1781135381296</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"update workspace.xml\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1781135415501</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1781135415501</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"4\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"add idea config files.\" />\n    <MESSAGE value=\"add .gitignore\" />\n    <MESSAGE value=\"update workspace.xml\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"update workspace.xml\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4afba5b3c38680cd20288957967357006f0e353e)
++++ b/.idea/workspace.xml	(date 1781135973357)
+@@ -11,13 +11,25 @@
+     </cargoProject>
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="9d59852d-2d41-4e21-9d99-868533792a0e" name="Changes" comment="update workspace.xml" />
++    <list default="true" id="9d59852d-2d41-4e21-9d99-868533792a0e" name="Changes" comment="update workspace.xml">
++      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/client.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/client.rs" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+   <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Rust File" />
++      </list>
++    </option>
++  </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+@@ -59,7 +71,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1781135415501</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="update workspace.xml">
++      <option name="closed" value="true" />
++      <created>1781135652276</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1781135652276</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+new file mode 100644
+--- /dev/null	(date 1781135764365)
++++ b/README.md	(date 1781135764365)
+@@ -0,0 +1,13 @@
++# Warptrixy
++
++> Simple and easy to use API Wrapper for the Open Source firmware "AWTRIX 3".
++
++## Installation
++```shell
++cargo add warptrixy
++```
++
++## Usage
++```rust
++
++```
+\ No newline at end of file
